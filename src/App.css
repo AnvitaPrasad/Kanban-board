@@ -1,0 +1,363 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.column {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.add-task {
+  display: flex;
+  margin-top: 10px;
+}
+
+.add-task input {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.add-task button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-task button:hover {
+  background-color: #45a049;
+}
+/* Kanban Board Styling */
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.column {
+  background-color: #fef9c7;
+  border-radius: 10px;
+  padding: 15px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.column:hover {
+  transform: scale(1.05);
+}
+
+.column h2 {
+  font-family: 'Courier New', Courier, monospace;
+  color: #e57373;
+  text-shadow: 1px 1px 2px #000000;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.column-cards {
+  min-height: 200px;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Card Styling */
+.card {
+  background-color: #e1f5fe;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  cursor: grab;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+/* Add Task Form Styling */
+.add-task input {
+  padding: 10px;
+  border: 2px solid #f0a500;
+  background-color: #fff3cd;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 80%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.add-task button {
+  background-color: #ff7043;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.add-task button:hover {
+  background-color: #ff5722;
+  transform: scale(1.1);
+}
+
+/* Hover effects for the board */
+.column:hover {
+  transform: translateY(-5px);
+}
+
+.column-cards:hover {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* General board styling */
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f5f5dc; /* Subtle beige background for retro look */
+}
+
+/* Column styling */
+.column {
+  width: 30%;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.column h2 {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  color: black; /* Black text for headings */
+  margin-bottom: 10px;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+/* Task card styling for sticky note effect */
+.card {
+  position: relative;
+  background-color: #ffeb3b; /* Sticky note yellow */
+  color: #333;
+  margin: 8px 0;
+  padding: 15px;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: rotate(-1deg) scale(1.05); /* Slight rotation and scaling */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Delete button styling */
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #d93636;
+}
+
+/* New task input styling */
+.add-task {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 8px;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.add-task button {
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-task button:hover {
+  background-color: #388e3c;
+}
+/* App.css */
+
+/* Ensuring full-screen coverage */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f0e7db; /* Optional background color for a retro feel */
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+/* Column styling */
+.column {
+  background-color: #f8f1e8;
+  padding: 10px;
+  border-radius: 8px;
+  width: 30%;
+  min-width: 250px;
+}
+
+.column h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: black; /* Ensuring text is black */
+  /* Remove shadow if it exists */
+  text-shadow: none;
+}
+
+.column-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 50vh;
+}
+
+/* Card styling */
+.card {
+  background-color: #fdd388;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Add retro "sticky note" style */
+.card:hover {
+  transform: scale(1.03);
+}
+
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: #d9534f;
+  cursor: pointer;
+}
+
+.add-task {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.add-task input {
+  padding: 5px;
+  font-size: 1em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: calc(100% - 60px);
+}
+
+.add-task button {
+  padding: 5px 10px;
+  font-size: 1em;
+  background-color: #3c8dbc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
